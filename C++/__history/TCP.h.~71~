@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+#ifndef TCPH
+#define TCPH
+//---------------------------------------------------------------------------
+#include <winsock2.h>
+#include <stdio.h>
+#include <stdlib.h>
+//---------------------------------------------------------------------------
+class ClientTCP
+{
+	private :
+		WSADATA wsadata;
+		SOCKET sock;
+		SOCKADDR_IN sin;
+
+	public :
+		ClientTCP();
+
+		~ClientTCP();
+
+		bool Connexion();
+		bool Deconnexion();
+
+		void Cloche1();
+		void Cloche2();
+		void Cloche1();
+		void Cloche2();
+		void EnvoiTrame(char *trame, int taille);
+};
+
+#endif

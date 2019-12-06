@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/12/02 14:47:29.000.568,=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2019/12/02 14:47:29.000.554,=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2019/12/02 14:47:37.000.216,C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\Unit1.dfm=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\TPCloches\Unit1.dfm</Transaction>
+    <Transaction>2019/12/02 14:47:37.000.216,C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\TPCloches\Unit1.cpp</Transaction>
+    <Transaction>2019/12/02 14:47:37.000.216,C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\TPCloches\Unit1.h</Transaction>
+    <Transaction>2019/12/02 15:01:31.000.700,=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\File1.h</Transaction>
+    <Transaction>2019/12/02 15:01:38.000.970,C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\File1.h=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\TPCloches\TCP.h</Transaction>
+    <Transaction>2019/12/02 15:01:47.000.117,=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\File1.cpp</Transaction>
+    <Transaction>2019/12/02 15:01:51.000.950,C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\File1.cpp=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\TPCloches\TCP.cpp</Transaction>
+    <Transaction>2019/12/02 17:44:41.000.685,C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\Project1PCH1.h=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\TPCloches\Project1PCH1.h</Transaction>
+    <Transaction>2019/12/02 17:44:42.000.894,C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\Project1.cbproj=C:\Users\Le Oui\Documents\Embarcadero\Studio\Projets\TPCloches\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

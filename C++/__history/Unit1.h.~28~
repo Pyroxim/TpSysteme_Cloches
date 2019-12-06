@@ -1,0 +1,37 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit1H
+#define Unit1H
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include "TCP.h"
+//---------------------------------------------------------------------------
+class TIHM : public TForm
+{
+__published:	// Composants gérés par l'EDI
+	TButton *ButtonConnexion;
+	TLabel *Label1;
+	TButton *ButtonDeconnexion;
+	TButton *BoutonCloche1;
+	TButton *BoutonCloche2;
+	TButton *BoutonCloche3;
+	void __fastcall ButtonConnexionClick(TObject *Sender);
+	void __fastcall ButtonDeconnexionClick(TObject *Sender);
+	void __fastcall BoutonCloche1Click(TObject *Sender);
+	void __fastcall BoutonCloche2Click(TObject *Sender);
+	void __fastcall BoutonCloche3Click(TObject *Sender);
+private:	// Déclarations utilisateur
+	ClientTCP cloche;
+	char trame[14];
+	char trameMarteau[14];
+public:		// Déclarations utilisateur
+	__fastcall TIHM(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TIHM *IHM;
+//---------------------------------------------------------------------------
+#endif
+
