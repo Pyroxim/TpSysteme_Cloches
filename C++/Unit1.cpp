@@ -1,4 +1,12 @@
 //---------------------------------------------------------------------------
+//Programme : Unit1.cpp                                     date : 03/12/2019
+//Dernière mise à jour : 06/12/2019
+//
+//Programmeur : Jules BLANC                                  classe : BTS SN2
+//
+//BUT : Gérer l'IHM et appeler les fonction de la classe CientTCP pour pouvoir
+//l'activer.
+//---------------------------------------------------------------------------
 #include <vcl.h>
 #pragma hdrstop
 

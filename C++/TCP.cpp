@@ -1,4 +1,14 @@
 //---------------------------------------------------------------------------
+//Programme : TCP.cpp                                       date : 03/12/2019
+//Dernière mise à jour : 06/12/2019
+//
+//Programmeur : Jules BLANC                                  classe : BTS SN2
+//
+//BUT : Classe qui contient les méthodes afin d'ouvrir le socket pour établir
+//la connexion TCP, et d'envoyer les trames pour activer la cloche.
+//
+//Programmes associés : TCP.h, Unit1.cpp
+//---------------------------------------------------------------------------
 #include <winsock2.h>
 #include <windows.h>
 #include <stdio.h>

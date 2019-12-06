@@ -1,4 +1,12 @@
 //---------------------------------------------------------------------------
+//Programme : TCP.h                                         date : 03/12/2019
+//Dernière mise à jour : 06/12/2019
+//
+//Programmeur : Jules BLANC                                  classe : BTS SN2
+//
+//BUT : Déclarer la classe CientTCP, les variables et les méthodes qui servent
+//à se connecter à la cloche.
+//---------------------------------------------------------------------------
 #ifndef TCPH
 #define TCPH
 //---------------------------------------------------------------------------
