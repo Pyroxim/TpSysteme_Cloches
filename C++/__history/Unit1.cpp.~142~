@@ -1,0 +1,103 @@
+//---------------------------------------------------------------------------
+//Programme : Unit1.cpp                                     date : 03/12/2019
+//Dernière mise à jour : 06/12/2019
+//
+//Programmeur : Jules BLANC                                  classe : BTS SN2
+//
+//BUT : Gérer l'IHM et appeler les fonction de la classe CientTCP pour pouvoir
+//l'activer.
+//
+//Programmes associés : TCP.h, Unit1.cpp
+//---------------------------------------------------------------------------
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TIHM *IHM;
+//---------------------------------------------------------------------------
+__fastcall TIHM::TIHM(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TIHM::BoutonConnexionClick(TObject *Sender)
+{
+	if(cloche.Connexion())
+	{
+		Label1->Color = clGreen;
+		BoutonDeconnexion->Enabled = true;
+		BoutonConnexion->Enabled = false;
+
+		BoutonCloche1->Enabled = true;
+		BoutonCloche2->Enabled = true;
+		BoutonCloche3->Enabled = true;
+		BoutonCloche4->Enabled = true;
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TIHM::BoutonDeconnexionClick(TObject *Sender)
+{
+	if(cloche.Deconnexion())
+	{
+		Label1->Color = clRed;
+		BoutonConnexion->Enabled = true;
+		BoutonDeconnexion->Enabled = false;
+
+		BoutonCloche1->Enabled = false;
+		BoutonCloche2->Enabled = false;
+		BoutonCloche3->Enabled = false;
+		BoutonCloche4->Enabled = false;
+    }
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TIHM::BoutonCloche1Click(TObject *Sender)
+{
+	cloche.Cloche1();
+	Sleep(250);
+	cloche.EnvoiTrame(trameMarteau, 14);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TIHM::BoutonCloche2Click(TObject *Sender)
+{
+	cloche.Cloche2();
+	Sleep(250);
+	cloche.EnvoiTrame(trameMarteau, 14);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TIHM::BoutonCloche3Click(TObject *Sender)
+{
+	cloche.Cloche3();
+	Sleep(250);
+	cloche.EnvoiTrame(trameMarteau, 14);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TIHM::BoutonCloche4Click(TObject *Sender)
+{
+	cloche.Cloche4();
+	Sleep(250);
+	cloche.EnvoiTrame(trameMarteau, 14);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TIHM::Edit1KeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+          
+{
+	if(Key == VK_F1)
+		cloche.Cloche1();
+	if(Key == 0x30)
+		cloche.Cloche2();
+	if(Key == 0x30)
+		cloche.Cloche3();
+	if(Key == 0x30)
+		cloche.Cloche4();	
+}
+//---------------------------------------------------------------------------
+

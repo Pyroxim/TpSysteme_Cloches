@@ -1,0 +1,130 @@
+//---------------------------------------------------------------------------
+//Programme : TCP.cpp                                       date : 03/12/2019
+//Dernière mise à jour : 06/12/2019
+//
+//Programmeur : Jules BLANC                                  classe : BTS SN2
+//
+//BUT : Classe qui contient les méthodes afin d'ouvrir le socket pour établir
+//la connexion TCP, et d'envoyer les trames pour activer la cloche.
+//
+//Programmes associés : TCP.h, Unit1.cpp
+//---------------------------------------------------------------------------
+#include <winsock2.h>
+#include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "TCP.h"
+
+#pragma comment (lib, "ws2_32.lib")
+//---------------------------------------------------------------------------
+ClientTCP::ClientTCP()
+{
+    trame[0] = 0x00;
+	trame[1] = 0x00;
+	trame[2] = 0x00;
+	trame[3] = 0x00;
+	trame[4] = 0x00;
+	trame[5] = 0x06;
+	trame[6] = 0x00;
+
+	trame[7] = 0x06;
+	trame[8] = 0x00;
+	trame[9] = 0x02;
+	trame[10] = 0x00;
+
+	trame[12] = 0x01;
+	trame[13] = 0x01;
+
+    trameMarteau[0] = 0x00;
+	trameMarteau[1] = 0x00;
+	trameMarteau[2] = 0x00;
+	trameMarteau[3] = 0x00;
+	trameMarteau[4] = 0x00;
+	trameMarteau[5] = 0x06;
+	trameMarteau[6] = 0x00;
+
+	trameMarteau[7] = 0x06;
+	trameMarteau[8] = 0x00;
+	trameMarteau[9] = 0x02;
+	trameMarteau[10] = 0x00;
+	trameMarteau[11] = 0x00;
+
+	trameMarteau[12] = 0x01;
+	trameMarteau[13] = 0x01;
+}
+
+ClientTCP::~ClientTCP()
+{
+
+}
+
+bool ClientTCP::Connexion()
+{
+	WSAStartup(MAKEWORD(2,0), &wsadata);
+
+	sin.sin_addr.s_addr = inet_addr("192.168.64.246");
+	sin.sin_family = AF_INET;
+	sin.sin_port = htons(512);
+
+	sock = socket(AF_INET, SOCK_STREAM, 0);
+	bind(sock, (SOCKADDR *)&sin, sizeof(sin));
+
+	if(connect(sock, (SOCKADDR *)&sin, sizeof(sin)) == 0)
+	{
+        return true;
+	}
+	else
+	{
+        return false;
+    }
+}
+
+bool ClientTCP::Deconnexion()
+{
+	closesocket(sock);
+	if(WSACleanup() == 0)
+	{
+		return true;
+	}
+	else
+	{
+        return false;
+    }
+}
+
+void ClientTCP::Cloche1()
+{
+	trame[11] = 0x01;
+	EnvoiTrame(trame, 14);
+	Sleep(250);
+	EnvoiTrame(trameMarteau, 14);
+}
+
+void ClientTCP::Cloche2()
+{
+	trame[11] = 0x02;
+	EnvoiTrame(trame, 14);
+    Sleep(250);
+	EnvoiTrame(trameMarteau, 14);
+}
+
+void ClientTCP::Cloche3()
+{
+	trame[11] = 0x04;
+	EnvoiTrame(trame, 14);
+    Sleep(250);
+	EnvoiTrame(trameMarteau, 14);
+}
+
+void ClientTCP::Cloche4()
+{
+	trame[11] = 0x08;
+	EnvoiTrame(trame, 14);
+    Sleep(250);
+	EnvoiTrame(trameMarteau, 14);
+}
+
+void ClientTCP::EnvoiTrame(char *trame, int taille)
+{
+    send(sock, trame, taille, 0);
+}
